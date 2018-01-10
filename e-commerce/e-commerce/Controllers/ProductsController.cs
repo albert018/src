@@ -62,9 +62,8 @@ namespace e_commerce.Controllers
                     break;
             }
 
-            const int PageItems = 3;
             int CurrentPage = (page ?? 1);
-            ViewModel.Products = Products.ToPagedList(CurrentPage, PageItems);
+            ViewModel.Products = Products.ToPagedList(CurrentPage, Constants.PageItems);
             ViewModel.SortBy = sortBy;
             ViewModel.Sort = new Dictionary<string, string>
             {
